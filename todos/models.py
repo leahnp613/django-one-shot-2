@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class TodoList(models.Model):
     name = models.CharField(max_length=100)
@@ -7,3 +8,14 @@ class TodoList(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class TodoItem(models.Model):
+    task = models.CharField(max_length=100)
+    due_date = models.DateTimeField(null=True, blank=True)
+    is_completed = models.BooleanField(default=False)
+    list = models.ForeignKey(
+       "todos.TodoList",
+       on_delete=models.CASCADE,
+       related_name= "items",
+    )
