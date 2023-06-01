@@ -3,6 +3,7 @@
         <div>
             <h1>{{ list.name }}</h1>
             <a href ="{% url 'todo_list_update' list.id %}">Edit</a>
+            <a href ="{% url 'todo_list_delete' list.id %}">Delete</a>
             <h2>Tasks</h2>
 
             <table>
