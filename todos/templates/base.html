@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django One Shot</title>
+</head>
+<header>
+    {% block header %}
+    {% endblock header %} 
+</header>
+<body>
+    <nav>
+        <a href= "{% url 'todo_list_create'%}">Create a new list</a>
+    </nav>
+<main>
+    {% block content %}
+    {% endblock content %}
+</main>
+    
+<footer>
+    {% block footer %}
+    {% endblock footer %}
+</footer>
+</body>
+</html>
