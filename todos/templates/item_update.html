@@ -1,13 +1,12 @@
-{% extends 'base.html'%}
-{% block content%}
+{% extends 'base.html' %}
 
-<div>
+{% block content %}
+  <div>
     <h1>Edit item</h1>
     <form method = "post">
-         {% csrf_token %}
-         {{form.as_p}}
-         <button>Update</button>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button>Update</button>
     </form>
-</div>
-
-{% endblock content %} 
+  </div>
+{% endblock content %}

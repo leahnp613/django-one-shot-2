@@ -15,7 +15,7 @@ class TodoItem(models.Model):
     due_date = models.DateTimeField(null=True, blank=True)
     is_completed = models.BooleanField(default=False)
     list = models.ForeignKey(
-       "todos.TodoList",
-       on_delete=models.CASCADE,
-       related_name= "items",
+        "todos.TodoList",
+        on_delete=models.CASCADE,
+        related_name="items",
     )

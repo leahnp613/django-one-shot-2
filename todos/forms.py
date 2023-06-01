@@ -1,4 +1,4 @@
-from django import forms 
+from django import forms
 from todos.models import TodoList, TodoItem
 
 
@@ -9,9 +9,8 @@ class TodoForm(forms.ModelForm):
             "name",
         ]
 
+
 class TodoItemForm(forms.ModelForm):
     class Meta:
-        model = TodoItem 
-        fields = [
-            "task", "due_date", "is_completed", "list"
-        ]
+        model = TodoItem
+        fields = ["task", "due_date", "is_completed", "list"]

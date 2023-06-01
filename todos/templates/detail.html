@@ -1,28 +1,28 @@
-{% extends 'base.html'%}
-{% block content%}
-        <div>
-            <h1>{{ list.name }}</h1>
-            <a href ="{% url 'todo_list_update' list.id %}">Edit</a>
-            <a href ="{% url 'todo_list_delete' list.id %}">Delete</a>
-            <h2>Tasks</h2>
+{% extends 'base.html' %}
 
-            <table>
-                <tr>
-                    <th>Tasks</th>
-                    <th>Due Date</th>
-                </tr>
-                {% for task in list.items.all %}
-                <tr>
-                    <td><a href ="{% url 'todo_item_update' task.id %}">{{task.task}}</a></td>
-                    {% if task.due_date %}
-                    <td>{{task.due_date}} </td>
-                    {% else %}
-                    <td> No Due Date </td>
-                    {% endif %}
-                </tr>
-                {% endfor %}
-            </table>
-        
-
-        </div>
-{% endblock content %}   
+{% block content %}
+  <div>
+    <h1>{{ list.name }}</h1>
+    <a href ="{% url 'todo_list_update' list.id %}">Edit</a>
+    <a href ="{% url 'todo_list_delete' list.id %}">Delete</a>
+    <h2>Tasks</h2>
+    <table>
+      <tr>
+        <th>Tasks</th>
+        <th>Due Date</th>
+      </tr>
+      {% for task in list.items.all %}
+        <tr>
+          <td>
+            <a href ="{% url 'todo_item_update' task.id %}">{{ task.task }}</a>
+          </td>
+          {% if task.due_date %}
+            <td>{{ task.due_date }}</td>
+          {% else %}
+            <td>No Due Date</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock content %}

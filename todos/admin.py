@@ -8,6 +8,11 @@ from todos.models import TodoList, TodoItem
 class TodoListAdmin(admin.ModelAdmin):
     list_display = ("name",)
 
+
 @admin.register(TodoItem)
 class TodoItemAdmin(admin.ModelAdmin):
-    list_display = ("task", "due_date", "is_completed",)
+    list_display = (
+        "task",
+        "due_date",
+        "is_completed",
+    )

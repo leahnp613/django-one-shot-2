@@ -1,27 +1,27 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
+
 {% block header %}
-{% endblock header %} 
-{% block content%}
-<div>
+{% endblock header %}
+{% block content %}
+  <div>
     <h1>My Lists</h1>
     <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Number of Items</th>
-            </tr>  
-        </thead>
-        <tbody>
-            {% for list in Todo_list_list %}
-            <tr>
-                <td><a href="{% url 'todo_list_detail' list.id %}">
-                    {{ list.name }}</a></td>
-                <td>{{ list.items.all.count }} </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-        
-      
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number of Items</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for list in Todo_list_list %}
+          <tr>
+            <td>
+              <a href="{% url 'todo_list_detail' list.id %}">{{ list.name }}</a>
+            </td>
+            <td>{{ list.items.all.count }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
     </table>
-</div>
-    {% endblock content %} 
+  </div>
+{% endblock content %}
