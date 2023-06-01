@@ -15,7 +15,7 @@ urlpatterns = [
     path("create/", create_todo_list, name="todo_list_create"),
     path("<int:id>/edit/", update_todo_list, name="todo_list_update"),
     path("<int:id>/delete/", delete_todo_list, name="todo_list_delete"),
-    path("item/create/", create_todo_item, name= "todo_item_create"),
-    path("item/update/<int:id>", update_todo_item, name="todo_item_update"),
+    path("items/create/", create_todo_item, name= "todo_item_create"),
+    path("items/<int:id>/edit/", update_todo_item, name="todo_item_update"),
 
 ]
