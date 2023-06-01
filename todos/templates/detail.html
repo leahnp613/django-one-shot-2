@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django One Shot</title>
+</head>
+<header>
+</header>
+<body>
+    <main>
+        <div>
+            <h1>{{ list.name }}</h1>
+            <h2>Tasks</h2>
+
+            <table>
+                <tr>
+                    <th>Tasks</th>
+                    <th>Due Date</th>
+                </tr>
+                {% for task in list.items.all %}
+                <tr>
+                    <td>{{task.task}}</td>
+                    {% if task.due_date %}
+                    <td>{{task.due_date}} </td>
+                    {% else %}
+                    <td> No Due Date </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        
+
+        </div>
+    </main>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>
